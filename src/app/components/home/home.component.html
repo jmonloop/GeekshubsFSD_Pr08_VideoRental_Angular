@@ -1,0 +1,13 @@
+<div class="home-container">
+    <div class="movies-div">
+        <div class="movies-rooster">
+            <div class="card" *ngFor="let film of movies">
+                <a routerLink="/film" routerLinkActive="active-link">
+                    <img class="posterclass swing" 
+                    src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
+                    alt="movie poster">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
