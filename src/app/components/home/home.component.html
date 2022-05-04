@@ -1,6 +1,7 @@
 <div class="home-container">
     <div class="movies-div">
         <div class="movies-rooster">
+            <!-- Mapeo los resultados de TMDB con *ngFor desde la variable "movies"-->
             <div class="card" *ngFor="let film of movies">
                 <a routerLink="/film" routerLinkActive="active-link">
                     <img class="posterclass swing" 
