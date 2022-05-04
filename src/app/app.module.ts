@@ -12,7 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HambModalComponent } from './components/hamb-modal/hamb-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {Materials} from './material.module';
+import {MaterialModule} from './material.module';
+import { IconsModule } from './icon.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {Materials} from './material.module';
     RouterModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    Materials,
+    MaterialModule,
+    IconsModule
 
 
   ],

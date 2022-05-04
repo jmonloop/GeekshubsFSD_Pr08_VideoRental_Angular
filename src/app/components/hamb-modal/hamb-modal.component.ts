@@ -9,6 +9,4 @@ import {Component} from '@angular/core';
 //   styleUrls: ['./hamb-modal.component.scss']
 })
 export class HambModalComponent {
-
-  // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 }
