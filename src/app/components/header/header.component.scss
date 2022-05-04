@@ -1,0 +1,51 @@
+.header-container {
+    height: 20vh;
+
+    @media (max-width: 768px) {
+        height: 10vh;
+    }
+
+    background-color: rgb(0, 0, 0);
+
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.mainIcon {
+    max-height: 100%;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.searchBar {
+    height: 100%;
+    width: 25em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.searchBar-input {
+    margin-right: 9%;
+}
+
+.searchBar-results {
+    position: absolute;
+    top: 70%;
+    height: auto;
+    width: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
