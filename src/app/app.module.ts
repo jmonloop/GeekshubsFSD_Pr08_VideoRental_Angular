@@ -13,6 +13,8 @@ import { HambModalComponent } from './components/hamb-modal/hamb-modal.component
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FilmComponent } from './components/film/film.component';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -29,7 +31,8 @@ import { IconsModule } from './icon.module';
     HambModalComponent,
     LoginComponent,
     RegisterComponent,
-    FilmComponent
+    FilmComponent,
+    ProfileComponent
 ],
   imports: [
     BrowserModule,

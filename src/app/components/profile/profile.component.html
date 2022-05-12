@@ -1,0 +1,29 @@
+<div class="home-container">
+    <div class="profile-div">
+        <div class="user-title">
+            <h1>{{user.nickname}} profile</h1>
+        </div>
+        <div class="user-name">
+            <h3>Name: {{user.name}}</h3>
+        </div>
+        <div class="user-surname">
+            <h3>Surname: {{user.surname}}</h3>
+        </div>
+        <div class="user-age">
+            <h3>Age: {{user.age}}</h3>
+        </div>
+        <div class="user-email">
+            <h3>Email: {{user.email}}</h3>
+        </div>
+        <div class="user-orders">
+            <h3>Orders:</h3>
+            <ul>
+                <li *ngFor="let order of userOrders">
+                    <h4>Movie title: {{order.filmTitle}}</h4>
+                    <h4>Booking Date: {{order.outDate}}</h4>
+                    <h4>Order price: {{order.price}}</h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
