@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/movie.model';
 import { MovieService } from 'src/app/services/movie.service';
+import { UserService } from 'src/app/services/user.service';
 
 //Enlazo con los distintos ficheros del componente
 @Component({
@@ -14,7 +15,7 @@ export class FilmComponent implements OnInit {
 
     movie: any;
     //constructor de la clase: le metemos el servicio que lleva la lógica del componente
-    constructor(public movieService: MovieService) { }
+    constructor(public movieService: MovieService, public userService: UserService) { }
 
     //Qué ejecuta el componente al inicializarse
     ngOnInit() {

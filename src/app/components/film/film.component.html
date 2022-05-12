@@ -1,10 +1,22 @@
 <div class="home-container">
     <div class="movies-div">
         <div class="film-title">
-            <h1>{{movie.original_title}}</h1>
+            <h1>{{movie.title}}</h1>
         </div>
         <div class="film-poster">
             <img src="https://image.tmdb.org/t/p/w200/{{movie.poster_path}}" alt="">
+        </div>
+        <div class="film-overview">
+            <p>{{movie.overview}}</p>
+        </div>
+        <div *ngIf="!userService.isLogged()" class="order-div" routerLink="/login">
+            <i-tabler name="user"></i-tabler>
+            <p>Login to order this movie</p>
+            
+        </div>
+        <div *ngIf="userService.isLogged()" class="order-div">
+            <i-tabler name="shopping-cart-plus"></i-tabler>
+            <p>Order movie</p>
         </div>
     </div>
 </div>
