@@ -1,0 +1,39 @@
+<div class="home-container">
+    <div class="register-div">
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput
+            [(ngModel)] = "userData.name" [ngModelOptions] = "{standalone: true }">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Surname</mat-label>
+            <input matInput
+            [(ngModel)] = "userData.surname" [ngModelOptions] = "{standalone: true }">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Age</mat-label>
+            <input matInput
+            [(ngModel)] = "userData.age" [ngModelOptions] = "{standalone: true }">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Nickname</mat-label>
+            <input matInput
+            [(ngModel)] = "userData.nickname" [ngModelOptions] = "{standalone: true }">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput
+            [(ngModel)] = "userData.email" [ngModelOptions] = "{standalone: true }">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"
+            [(ngModel)] = "userData.password" [ngModelOptions] = "{standalone: true }">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+        <button class="button" (click)="register()" type="submit">REGISTER</button>
+    </div>
+</div>

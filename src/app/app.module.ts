@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 
 import {MaterialModule} from './material.module';
 import { IconsModule } from './icon.module';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { IconsModule } from './icon.module';
     HeaderComponent,
     HambModalComponent,
     LoginComponent,
+    RegisterComponent
 ],
   imports: [
     BrowserModule,

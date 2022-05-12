@@ -23,4 +23,8 @@ export class UserService {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
   }
+
+  register(userData:any):Observable<any>{
+    return this.httpClient.post(this.url+'register',userData, {responseType: 'text'});
+  }
 }
