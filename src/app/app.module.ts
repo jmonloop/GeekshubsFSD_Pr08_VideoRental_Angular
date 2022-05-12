@@ -10,14 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HambModalComponent } from './components/hamb-modal/hamb-modal.component';
-import {LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { FilmComponent } from './components/film/film.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import {MaterialModule} from './material.module';
 import { IconsModule } from './icon.module';
-import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { RegisterComponent } from './components/register/register.component';
     HeaderComponent,
     HambModalComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FilmComponent
 ],
   imports: [
     BrowserModule,
