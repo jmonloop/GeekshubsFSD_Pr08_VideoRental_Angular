@@ -14,7 +14,7 @@
             <p>Login to order this movie</p>
             
         </div>
-        <div *ngIf="userService.isLogged()" class="order-div">
+        <div *ngIf="userService.isLogged()" class="order-div" (click)="placeOrder()">
             <i-tabler name="shopping-cart-plus"></i-tabler>
             <p>Order movie</p>
         </div>

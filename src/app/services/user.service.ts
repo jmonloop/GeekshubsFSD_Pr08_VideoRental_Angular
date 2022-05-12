@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class UserService {
   url='https://videostore-backend.herokuapp.com/users/';
 
-
   constructor(private httpClient:HttpClient) { }
 
   login(userData:any):Observable<any>{

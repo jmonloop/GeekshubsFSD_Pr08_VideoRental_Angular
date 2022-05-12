@@ -13,6 +13,11 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   getOrders(userId: number): Observable<any> {
-    return this.http.get<any>(`https://videostore-backend.herokuapp.com/orders/${userId}`);
+    return this.http.get<any>(`${this.url}${userId}`);
+  }
+
+  placeOrder(order: any): Observable<any> {
+    console.log(order)
+    return this.http.post<any>('https://videostore-backend.herokuapp.com/orders', order);
   }
 }
