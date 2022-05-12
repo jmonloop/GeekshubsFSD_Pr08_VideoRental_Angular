@@ -26,12 +26,15 @@ export class HomeComponent implements OnInit {
 
     //Lógica de la llamada al servicio.getMovies
     private getMovies() {
+
         this.movieService.getMovies()
         //subscribe sirve para utilizar los datos de una respuesta http o de un observable
           .subscribe( res => {
               //asignamos lo que devuelve movieService.getMovies() a la variable movies que usaremos para pintar las películas en el html
             this.movies = res.results   
           }) 
+
+          console.log(this.movieService);
 
     }
 

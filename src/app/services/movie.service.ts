@@ -18,9 +18,10 @@ export class MovieService {
     //Método para traer pelis de TMDB
     getMovies() {
         const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${1}`;
-
+        
         //Después del método (get, post, put, etc) siempre se pone el tipo que llegará. any es un comodín pero se debe ser estricto con el tipado
         return this.http.get<any>(url)
     }
 
 }
+

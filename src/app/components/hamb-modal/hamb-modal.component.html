@@ -3,21 +3,10 @@
 </button>
 
 <mat-menu #menu="matMenu">
-    <div mat-menu-item (click)="$event.stopPropagation()">
-        <button mat-icon-button [matMenuTriggerFor]="login">
-            LOGIN
-        </button>
+    <div mat-menu-item>
+        <a routerLink="/login" routerLinkActive="active-link">LOGIN</a>
     </div>
-    <div mat-menu-item (click)="$event.stopPropagation()">
-        <button mat-icon-button [matMenuTriggerFor]="register">
-            REGISTER
-        </button>
+    <div mat-menu-item>
+        <a routerLink="/register" routerLinkActive="active-link">REGISTER</a>
     </div>
-</mat-menu>
-
-<mat-menu #login="matMenu">
-    SOY LOGIN
-</mat-menu>
-<mat-menu #register="matMenu">
-    SOY REGISTER
 </mat-menu>

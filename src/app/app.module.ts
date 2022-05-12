@@ -10,7 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HambModalComponent } from './components/hamb-modal/hamb-modal.component';
+import {LoginComponent } from './components/login/login.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import {MaterialModule} from './material.module';
 import { IconsModule } from './icon.module';
@@ -20,7 +23,8 @@ import { IconsModule } from './icon.module';
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    HambModalComponent
+    HambModalComponent,
+    LoginComponent,
 ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ import { IconsModule } from './icon.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    IconsModule
+    IconsModule,
+    FormsModule
 
 
   ],
