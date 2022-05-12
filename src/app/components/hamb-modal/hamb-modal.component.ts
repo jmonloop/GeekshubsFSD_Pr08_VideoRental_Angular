@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 /**
  * @title Basic menu
@@ -6,7 +7,20 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app-hamb-modal',
   templateUrl: './hamb-modal.component.html',
-//   styleUrls: ['./hamb-modal.component.scss']
+  //   styleUrls: ['./hamb-modal.component.scss']
 })
-export class HambModalComponent {
+export class HambModalComponent implements OnInit {
+
+
+
+  constructor(public userService: UserService) { }
+
+  logout() {
+    this.userService.logout();
+  }
+
+  ngOnInit() {
+  }
+
+
 }

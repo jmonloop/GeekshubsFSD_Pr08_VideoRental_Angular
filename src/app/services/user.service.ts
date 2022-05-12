@@ -14,4 +14,13 @@ export class UserService {
   login(userData:any):Observable<any>{
     return this.httpClient.post(this.url+'login',userData);
   }
+
+  isLogged():boolean{
+    return !!localStorage.getItem('token');
+  }
+
+  logout(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  }
 }

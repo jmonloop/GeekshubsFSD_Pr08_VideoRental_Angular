@@ -32,14 +32,9 @@ export class LoginComponent {
             (res) => {
                 console.log(res);
                 localStorage.setItem('token', res.token);
-                localStorage.setItem('user', res.user);
+                localStorage.setItem('user', JSON.stringify(res.user));
                 this.router.navigate(['/']);
             }
         )
-    }
-
-    logout() {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
     }
 }
