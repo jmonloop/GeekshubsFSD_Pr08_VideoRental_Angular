@@ -3,8 +3,7 @@
     <img class="mainIcon" src="../../../assets/img/istreaming.png" alt="iStreaming-logo" routerLink="/">
     <div class="searchBar">
         <div class="searchBar-input">
-            <input matInput [(ngModel)]="searchData" [ngModelOptions]="{standalone: true }">
-            <button class="search-bttn" (click)="findMovieByTitle()">GO</button>
+            <input matInput (keyup)="typeSearch($event)" (focus)="searchFocus()" placeholder="Search movie..." value="{{searchData}}" #searchBox>
         </div>
         <div class="searchBar-results" *ngIf="movies && !outside">
             <div class="searchBar-row" *ngFor="let film of movies">
