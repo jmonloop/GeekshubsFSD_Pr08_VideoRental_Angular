@@ -4,13 +4,19 @@
             <!-- Mapeo los resultados de TMDB con *ngFor desde la variable "movies"-->
             <div class="card" *ngFor="let film of movies">
                 <a routerLink="/film" routerLinkActive="active-link">
-                    <img class="posterclass swing" 
-                    src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}" 
-                    alt="movie poster"
-                    (click)="movieService.locateFilm(film)">
-                    
+                    <img class="posterclass swing" src="https://image.tmdb.org/t/p/w200/{{film.poster_path}}"
+                        alt="movie poster" (click)="movieService.locateFilm(film)">
+
                 </a>
             </div>
         </div>
+        <mat-paginator
+        class="paginator"
+        (page)="onPageChange($event)" 
+        [length]=results.total_results 
+        [pageSize]="20" 
+        aria-label="Select page"
+        >
+        </mat-paginator>
     </div>
 </div>
