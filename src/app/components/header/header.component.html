@@ -3,13 +3,14 @@
     <img class="mainIcon" src="../../../assets/img/istreaming.png" alt="iStreaming-logo" routerLink="/">
     <div class="searchBar">
         <div class="searchBar-input">
-            <input matInput
-            [(ngModel)] = "searchData" [ngModelOptions] = "{standalone: true }">
+            <input matInput [(ngModel)]="searchData" [ngModelOptions]="{standalone: true }">
             <button class="search-bttn" (click)="findMovieByTitle()">GO</button>
         </div>
         <div class="searchBar-results" *ngIf="movies && !outside">
             <div class="searchBar-row" *ngFor="let film of movies">
-                <span>{{film.title}}</span>
+                <span (click)="movieService.locateFilm(film)" routerLink="/film">
+                    {{film.title}}
+                </span>
             </div>
         </div>
     </div>
