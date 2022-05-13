@@ -3,7 +3,9 @@
     <img class="mainIcon" src="../../../assets/img/istreaming.png" alt="iStreaming-logo" routerLink="/">
     <div class="searchBar">
         <div class="searchBar-input">
-            <!-- MANTINE INPUT TODO -->
+            <input matInput
+            [(ngModel)] = "searchData" [ngModelOptions] = "{standalone: true }">
+            <button class="search-bttn" (click)="findMovieByTitle()">GO</button>
         </div>
         <div class="searchBar-results">
             <!-- SEARCHBAR CONDITIONALS TODO -->

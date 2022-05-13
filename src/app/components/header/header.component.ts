@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-// import { UserService } from 'src/app/services/user.service';
+import { MovieService } from 'src/app/services/movie.service';
 
 /**
  * @title Basic menu
@@ -10,10 +10,21 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+    searchData: string = "";
+    movies: any;
   
-    // constructor(public userService: UserService) { }
+    constructor(public movieService: MovieService) { }
    
     ngOnInit() {
     }
   
+
+    findMovieByTitle() {
+        this.movieService.findMovieByTitle(this.searchData)
+        .subscribe(res => {
+            this.movies = res;
+            this.movies = this.movies.results;
+        })
+    }
   }

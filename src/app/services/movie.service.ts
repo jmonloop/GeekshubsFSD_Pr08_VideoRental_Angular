@@ -20,7 +20,7 @@ export class MovieService {
     constructor(private http: HttpClient) { }
 
     //Método para traer pelis de TMDB
-    getMovies(pgIndex:number) {
+    getMovies(pgIndex: number) {
         const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US&page=${pgIndex}`;
 
         //Después del método (get, post, put, etc) siempre se pone el tipo que llegará. any es un comodín pero se debe ser estricto con el tipado
@@ -29,12 +29,18 @@ export class MovieService {
 
 
 
-    locateFilm(filmChoose:object){
-      
+    locateFilm(filmChoose: object) {
+
         this.filmChoosen = filmChoose;
-        
+
         return;
-     }
+    }
+
+
+
+    findMovieByTitle(title: string): Observable<Array<any>> {
+        return this.http.get<Array<any>>(`https://videostore-backend.herokuapp.com/films/title?arg=${title}`)
+    }
 
 
 }
