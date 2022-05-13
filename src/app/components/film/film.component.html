@@ -12,11 +12,14 @@
         <div *ngIf="!userService.isLogged()" class="order-div" routerLink="/login">
             <i-tabler name="user"></i-tabler>
             <p>Login to order this movie</p>
-            
+
         </div>
-        <div *ngIf="userService.isLogged()" class="order-div" (click)="placeOrder()">
+        <div *ngIf="userService.isLogged() && !isMovie" class="order-div" (click)="placeOrder()">
             <i-tabler name="shopping-cart-plus"></i-tabler>
             <p>Order movie</p>
+        </div>
+        <div *ngIf="userService.isLogged() && isMovie">
+            <p>You already have this movie</p>
         </div>
     </div>
 </div>
