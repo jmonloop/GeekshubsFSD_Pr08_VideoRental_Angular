@@ -7,7 +7,7 @@
         </div>
         <div class="searchBar-results" *ngIf="movies && !outside">
             <div class="searchBar-row" *ngFor="let film of movies">
-                <span (click)="movieService.locateFilm(film)" routerLink="/film">
+                <span (click)="goToMovie(film)" routerLink="/film">
                     {{film.title}}
                 </span>
             </div>

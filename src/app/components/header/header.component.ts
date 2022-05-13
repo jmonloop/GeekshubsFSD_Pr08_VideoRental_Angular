@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
+import { Router } from '@angular/router';
 
 /**
  * @title Basic menu
@@ -31,23 +32,34 @@ export class HeaderComponent implements OnInit {
     }
 
 
-    constructor(public movieService: MovieService) { }
+    constructor(public movieService: MovieService, private router: Router) { }
 
     ngOnInit() {
     }
 
+    //Send input value to service to search for movie (debounced)
     typeSearch(event: any) {
         this.searchData = event.target.value;
         if (this.searchData.length >= 3) {
             this.findMovieByTitle();
         }
     }
-
+    //Call service to search for movie
     findMovieByTitle() {
         this.movieService.findMovieByTitle(this.searchData)
             .subscribe(res => {
                 this.movies = res;
                 this.movies = this.movies.results;
             })
+    }
+
+
+    goToMovie(film:any){
+        this.movieService.locateFilm(film)
+        if(this.router.url == '/film'){
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate(['/film']);
+            });
+        }
     }
 }
