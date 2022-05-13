@@ -43,8 +43,6 @@ import { IconsModule } from './icon.module';
     MaterialModule,
     IconsModule,
     FormsModule
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]
