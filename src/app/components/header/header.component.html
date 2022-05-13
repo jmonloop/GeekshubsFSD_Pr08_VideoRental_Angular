@@ -7,8 +7,10 @@
             [(ngModel)] = "searchData" [ngModelOptions] = "{standalone: true }">
             <button class="search-bttn" (click)="findMovieByTitle()">GO</button>
         </div>
-        <div class="searchBar-results">
-            <!-- SEARCHBAR CONDITIONALS TODO -->
+        <div class="searchBar-results" *ngIf="movies && !outside">
+            <div class="searchBar-row" *ngFor="let film of movies">
+                <span>{{film.title}}</span>
+            </div>
         </div>
     </div>
     <app-hamb-modal></app-hamb-modal>

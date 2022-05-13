@@ -41,7 +41,7 @@
 
 .searchBar-results {
     position: absolute;
-    top: 70%;
+    top: 15%;
     height: auto;
     width: auto;
     background-color: white;
@@ -49,4 +49,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    color: black;
+}
+
+.searchBar-row {
+    cursor: pointer;
+    :hover {
+        background: black;
+        color: white;
+    }
+}
+
+#mat-icon-button {
+    color: white;
 }
