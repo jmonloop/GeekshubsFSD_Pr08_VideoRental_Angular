@@ -5,9 +5,7 @@ import { UserService } from 'src/app/services/user.service';
 import { OrderService } from 'src/app/services/order.service';
 import { Sort } from '@angular/material/sort';
 
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
-  }
+
 
 
 //Enlazo con los distintos ficheros del componente
@@ -21,7 +19,7 @@ function compare(a: number | string, b: number | string, isAsc: boolean) {
 export class ProfileComponent implements OnInit {
     user: any;
     userOrders: Order[] = [];
-    sortedData: Order[];
+    sortedData: Order[] = [];
 
     //constructor de la clase: le metemos el servicio que lleva la lógica del componente
     constructor(
@@ -53,14 +51,18 @@ export class ProfileComponent implements OnInit {
 
     sortData(sort: Sort) {
         const data = this.userOrders.slice();
+        // console.log(sort)
         if (!sort.active || sort.direction === '') {
             this.sortedData = data;
+            // console.log(this.sortedData)
+            // console.log(data)
             return;
         }
         this.sortedData = data.sort((a, b) => {
             const isAsc = sort.direction === 'asc';
             switch (sort.active) {
                 case 'filmTitle':
+                    // console.log(compare(a.filmTitle, b.filmTitle, isAsc))
                     return compare(a.filmTitle, b.filmTitle, isAsc);
                 case 'outDate':
                     return compare(a.outDate, b.outDate, isAsc);
@@ -72,3 +74,9 @@ export class ProfileComponent implements OnInit {
         })
     }
 }
+function compare(a: number | string, b: number | string, isAsc: boolean) {
+    // console.log("A", a);
+    // console.log("B", b);
+    // console.log("ISASC", isAsc);
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }

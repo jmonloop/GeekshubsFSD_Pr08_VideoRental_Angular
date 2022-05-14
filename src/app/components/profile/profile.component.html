@@ -37,7 +37,7 @@
                     <th mat-sort-header="outDate">Booking Date</th>
                     <th mat-sort-header="price">Price (€)</th>
                 </tr>
-                <tr *ngFor="let order of userOrders">
+                <tr *ngFor="let order of sortedData">
                     <td>{{order.filmTitle}}</td>
                     <td>{{order.outDate}}</td>
                     <td>{{order.price}}</td>
