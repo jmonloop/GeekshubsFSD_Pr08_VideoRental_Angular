@@ -26,6 +26,8 @@
 }
 
 .searchBar {
+    // background-color: white;
+
     height: 100%;
     width: 25em;
 
@@ -49,6 +51,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+
+    z-index: 3;
 
     color: black;
 }

@@ -1,4 +1,10 @@
 .home-container {
+    height: fit-content;
+    min-height: 80vh;
+    @media (max-width: 768px) {
+        min-height: 90vh;
+    }
+
     background: rgb(6, 126, 68);
     background: linear-gradient(180deg, rgba(6, 126, 68, 1) 2%, rgba(5, 111, 26, 1) 28%, rgba(53, 106, 6, 1) 92%);
 
