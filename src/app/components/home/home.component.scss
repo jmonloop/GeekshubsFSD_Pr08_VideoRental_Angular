@@ -21,17 +21,16 @@
 
 .movies-rooster {
     display: flex;
-    /* flex-wrap: wrap; */
+
     flex-wrap: wrap;
-
-    /* margin: 3%; */
-
+    
     >* {
-        flex-basis: 25%;
+        flex-basis: 20%;
         margin-bottom: 5%;
     }
 
     margin-bottom: 2%;
+    margin-left: 6.5%;
 
 
     @media (max-width: 768px) {
