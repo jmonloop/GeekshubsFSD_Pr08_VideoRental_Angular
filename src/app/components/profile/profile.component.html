@@ -1,0 +1,59 @@
+<div class="home-container">
+    <div class="profile-div">
+        <mat-list>
+            <mat-list-item>
+                <div class="user-title">
+                    <h1>{{user.nickname}} profile</h1>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <div class="user-name">
+                    <h3>Name: {{user.name}}</h3>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <div class="user-surname">
+                    <h3>Surname: {{user.surname}}</h3>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <div class="user-age">
+                    <h3>Age: {{user.age}}</h3>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <div class="user-email">
+                    <h3>Email: {{user.email}}</h3>
+                </div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <div *ngIf="userOrders.length > 0">
+                <h2>Orders</h2>
+                <table matSort (matSortChange)="sortData($event)">
+                    <tr>
+                        <th mat-sort-header="filmTitle">Film Title</th>
+                        <th mat-sort-header="outDate">Booking Date</th>
+                        <th mat-sort-header="price">Price (€)</th>
+                    </tr>
+                    <tr *ngFor="let order of sortedData">
+                        <td>{{order.filmTitle}}</td>
+                        <td>{{order.outDate}}</td>
+                        <td>{{order.price}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="userOrders.length == 0">
+                <h2>You have no orders yet</h2>
+            </div>
+        </mat-list>
+
+
+
+
+
+    </div>
+</div>

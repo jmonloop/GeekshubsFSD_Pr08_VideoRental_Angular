@@ -1,0 +1,18 @@
+<div class="header-container">
+
+    <img class="mainIcon" src="../../../assets/img/istreaming.png" alt="iStreaming-logo" routerLink="/">
+    <div class="searchBar">
+        <div>
+            <input (keyup)="typeSearch($event)" (focus)="searchFocus()" placeholder="Search movie..."
+                value="{{searchData}}" #searchBox>
+        </div>
+        <div class="searchBar-results" *ngIf="movies && !outside">
+            <div class="searchBar-row" *ngFor="let film of movies">
+                <span (click)="goToMovie(film)" routerLink="/film">
+                    {{film.title}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <app-hamb-modal></app-hamb-modal>
+</div>
